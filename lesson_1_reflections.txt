@@ -1,0 +1,75 @@
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+    In a diff view, only the parts of a file that have changed from one version
+    to another are shown to the user, which helps to reduce the search space for
+    potential errors, thus making it easier to pinpoint the source of a
+    particular bug.
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+    Easy access to a file's complete change history -- especially if accompanied
+    by descriptive commit messages -- can be instrumental in helping a developer
+    understand, or recall, not only the rationale behind fine-grained changes to
+    a file, but also how those modifications relate to and reflect higher-level
+    decisions influencing the entire project. In this regard, a revision history
+    can be seen as a sort of logbook detailing the setup and outcomes
+    of a series of experiments -- both successful and otherwise -- from which I
+    can gain insight into how and why the code evolved to its present form. This
+    knowledge gives me a better sense of direction as to what to try -- and what
+    not to try -- when further developing the code, thereby increasing my
+    long-term effectiveness and efficiency.
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+
+    Fill in your answer here
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+
+    I believe these differences stem from how each application defines its
+    logical unit of work, frequently designated as project, and the physical
+    storage model used to represent the associated information. Google Docs is
+    a word processing application where the project is a single
+    self-contained document  saved as a single file it is all but natural to . The paradigm in Google Docs
+    is that the unit of work in Google is the document, which is treated/modeled as a self-contained
+    entity that includes all relevant project information. Git, on the other hand, is targeted at software projects, which are typically composed of multiple files
+     
+
+How can you use the commands git log and git diff to view the history of files?
+
+    I use both the git log and git view commands to view file history, the main
+    difference in their use depending on the kind of version information I need
+    to access. The git log command can be used to quickly view and browse a
+    chronologically sorted list of repository commits, including each commit's
+    date, author, and log message. The git diff command, in turn, enables me
+    to navigate and highlight (optionally using colorized text) the content
+    changes, at line granularity, between any two commits.
+
+How might using version control make you more confident to make changes that
+could break something?
+
+    Version control, when coupled with a continuous integration system and a
+    process to rollback breaking changes, gives rise to a flexible
+    development environment giving me full confidence to modify and experiment
+    with the code to my heart's content. Explain... (Supporting sentences)
+
+Now that you have your workspace set up, what do you want to try using Git for?
+
+    Explain why (advantages of) I need to use third-party Puppet modules.
+    Introduce the issue of having to make some modifications to the modules.
+
+    I'd like to use Git to fork existing Puppet modules on GitHub and make
+    minor changes to them so that I can integrate them into my infrastructure,
+    while avoiding the maintenance overhead of having to track them using
+    internal repositories.
+
+    so that I don't have to depend on the original developer's goodwill or
+    availability to see key features or fixes implemented, all while
+    avoiding the following difficulties:
+
+    leave open the possibility that the module's developer decides to include
+    my fixes in the original project.
