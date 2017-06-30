@@ -7,6 +7,54 @@ What happens when you initialize a repository? Why do you need to do it?
 
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
+   
+    The staging area differs from the working directory and the repository in
+    that it plays a central role in Git's two-step commit process, acting as
+    both a buffer and a filter between the two areas. The buffering behavior
+    stems from the requirement that files be explicitly added to the staging
+    area before being committed, which corresponds to an extra layer of security
+    protecting the developer from inadvertently transferring undesired, working
+    directory changes directly to the repository. The filtering behavior,
+    although closely related to trhe filtering behavior can be seen as a side-effect of this buffering behavior, ...
+
+    Supporting sentences:
+
+    Filter: Allows me to select which locally modified files should be included
+    in the next commit (as opposed to selecting everything)
+    Enables me to more easily split local changes into separate (logical)
+    commits. Thanks to commands like git diff --staged, I can quickly compare
+    only those files in the commit I'm working on with the repository, as
+    opposed to comparing everything, which may include temporary, irrelevant
+    files that
+    only pollute/add noise to the logs/diff views, potentially distracting/diverting my
+    attention from the truly relevant changes. Huge productivity booster when
+    working from the command line.
+
+    Thesis statement / Concluding sentence:
+   
+    The staging area offers a number of advantages, to be discussed in the
+    sequel.
+    In what follows, some of the advantages it offers will be briefly outlined.
+
+    Advantages:
+
+    - git (does not enforce two-step commit, as there is a commit -a command,
+      promoting, fostering it instead) some best practices built-in, obviating
+      the requirement/ not relying on third-party IDE's for following a sound
+      workflow
+
+    - Staging area gives the control to make commit smaller. Just make one
+      logical change in the code, add the changed files to the staging area a
+
+    - staging helps you split up one large change into multiple commits
+
+    - staging helps in reviewing changes
+
+    - staging helps you keep extra local files hanging around
+    
+    - You might end up committing something that is not tested exactly, because you tested with the contents of the work tree, which is not the same as the index that is being committed. git stash save --keep-index
+
+    
 
 How can you use the staging area to make sure you have one commit per logical
 change?
@@ -14,10 +62,48 @@ change?
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
+    While/I know this opinion might go against the spirit of the course, but ...
+    I don't believe branches are helpful, nor can I envision any situation where
+    they would be truly helpful, i.e., where the benefits of using them would
+    actually outweigh the downsides. I am, actually, a staunch supporter and
+    evangelist of the 'branch by abstraction' concept.
+
 How do the diagrams help you visualize the branch structure?
+
+    Commit diagrams are extremely useful in visualizing a repository's branch
+    structure, as the commit history is depicted as a tree where each node
+    represents an individual commit, and edges establish ancestry relationships
+    between two commits. With this representation, branches can be easily 
+    identified as the locations where a node (commit) has more than one child.
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+    The result of merging two branches together is a new commit consisting of a
+    combination of the repository states for the latest commits in each
+    branch, commonly referred to as branch tips. Since Git makes these commits
+    direct ancestors of the new commit, it inherits the complete change
+    history of both branches, which explains why a merge is represented the
+    way it is in the diagram.
+
 What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+
+    ASSUMING THAT ONE MERGES OFTEN...
+
+    Pros: Focuses developer attention and time savings - for relatively simple changes, the automatic merging 
+          algorithm should perform well most of the time, with any outstanding
+          issues should be relatively
+          quickly detected by a continuous integration system or a local test
+          suite;
+          Focuses my attention only on those changes (a.k.a 
+          conflicts) more likely to break things, which can be a real time-saver
+          both if I merge often or if the number of changes being merged is 
+          large.
+
+    Cons: Potential to break things or to introduce unforeseen behavior. By
+    choosing not to show certain differences to the developer, the risk arises
+    that certain things are not properly reviewed. This issue can be especially
+    serious if the project's test coverage is low.
+
+
