@@ -2,8 +2,8 @@ What happens when you initialize a repository? Why do you need to do it?
 
     When a repository is initialized using git init, a hidden folder named .git
     is created inside the directory where the command was run. This step is
-    necessary as the .git folder contains the basic support infrastructure and
-    metadata needed by Git to start tracking file versions.
+    necessary as the .git folder contains the basic infrastructure and metadata
+    needed by Git to start tracking file versions.
 
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
@@ -12,10 +12,13 @@ What value do you think it offers?
     that it plays a central role in Git's two-step commit process, acting as
     both a buffer and a filter between the two areas. The buffering behavior
     stems from the requirement that files be explicitly added to the staging
-    area before being committed, which corresponds to an extra layer of security
-    protecting the developer from inadvertently transferring undesired, working
-    directory changes directly to the repository. The filtering behavior,
-    although closely related to trhe filtering behavior can be seen as a side-effect of this buffering behavior, ...
+    area before being committed, providing an extra layer of security
+    protecting the developer from inadvertently transferring unreviewed changes
+    directly to the repository. The filtering behavior,
+    although closely related to the filtering behavior can be seen as a side-effect of this buffering behavior, ...
+
+
+    (although not completely indenpendent from the buffewring behavior, can be regarded as a refinement of the latter, )
 
     Supporting sentences:
 
