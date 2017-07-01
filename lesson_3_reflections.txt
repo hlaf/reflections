@@ -6,10 +6,10 @@ local?
     these would be in the context of a team effort, such as a software
     development project, where multiple people work concurrently on the same
     codebase.
-    Another use case would be when a developer needs to work on different
+    Another use case would be when a person needs to work on different
     computers, as in the case of multi-platform software development or remote
     work.
-    Finally, a remote repository can also be a useful way to help protect one's
+    Finally, using a remote repository can also be a way to help protect one's
     work against data loss, by ensuring that at least one copy resides in a
     different physical location.
 
