@@ -38,7 +38,9 @@ use one instead of another?
 What is the benefit of having a copy of the last known state of the remote
 stored locally?
 
-    Fill in your answer here
+    Given my limited experience with Git, at this moment the only benefit I
+    could clearly derive from that feature would be the ability to merge remote
+    changes without the need for a permanent network connection.
 
 How would you collaborate without using Git or GitHub?  What would be easier,
 and what would be harder?
